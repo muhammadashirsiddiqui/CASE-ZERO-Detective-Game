@@ -145,7 +145,9 @@ void murder(void){
     screen();puts(GOLD "FILE 02 | THE MIDNIGHT MURDER" RESET);
     printf("11:58 PM. %s is found dead in a fictional campus. A recorder was tampered with.\n",p[victim].name);
     puts("A message: 'Jo nazar aa raha hai, zaroori nahi woh sach ho.'\nYour warrant expires after five investigations. No guessing without proof.");
-    pauseGame();
+    
+   pauseGame();
+   
     for(;;){printf(CYAN "\nCASE BOARD | Actions left: %d\n" RESET,moves);
         puts("1. Scene report\n2. Recover damaged CCTV\n3. Read card entry log\n4. Interview suspects\n5. Anonymous voice note\n6. Review collected evidence\n7. Final accusation\n8. Return to suite");
         opt=input(1,8);if(opt==8)return;if(opt==7)break;
@@ -188,6 +190,7 @@ void escapeRoom(void){
     if(!points)printf(RED "Battery depleted. Exit code was %03d.\n" RESET,code);
     printf("Score: %d\n",points);recordMode("Escape the Darkness",points);pauseGame();
 }
+
 /* Startup digital clock: Pakistan time (UTC+5), 12-hour AM/PM. */
 void startupClock(void){
     const char *digits[10][5]={
